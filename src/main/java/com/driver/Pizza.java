@@ -20,6 +20,8 @@ public class Pizza {
 
     private boolean takeAway;
 
+    public boolean isDeluxe;
+
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
         // your code goes here
@@ -42,12 +44,14 @@ public class Pizza {
     }
 
     public void addExtraCheese(){
-        this.extraCheesePrice += this.basicExtraCheesePrice;
+        if(!isDeluxe)
+        this.extraCheesePrice = this.basicExtraCheesePrice;
         // your code goes here
     }
 
     public void addExtraToppings(){
-        this.extraTopingPrice += this.basicExtraToppingPrice;
+        if(!isDeluxe)
+        this.extraTopingPrice = this.basicExtraToppingPrice;
         // your code goes here
     }
 
